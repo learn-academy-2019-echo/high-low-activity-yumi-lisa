@@ -1,12 +1,15 @@
-# Magic 8 Ball Activity
+# High Low Activity
 
-In this activity we're going to create a Magic 8 Ball application.  We'll use a React application as a template to run the code that we are going to write for Magic 8 Ball.
+In this activity we're going to create a High Low application.  We'll use a React application as a template to run the code that we are going to write for High Low.
 
 
-### Magic 8 Ball Stories
-* As a user, I can type in a question to the magic 8 ball application.
-* As a user, when I click submit, I see a random answer displayed.
+### High Low Stories
+* As a user, I can type in a number to the High Low application.
+* As a user, when I click Submit, I see a response telling me that I guessed correctly or incorrectly.
 * As a user, the page is styled, and pleasing to use.
+
+### Stretch Stories
+* As a user, if I guess incorrectly 7 times, the page displays a losing message.
 
 ### Getting started
 
@@ -15,7 +18,7 @@ All the code you'll need to write for this app is going to be inside one functio
 After you accept the assignment (or clone this repo), you'll want to install all the npm packages using Yarn:
 
 ```bash
-$ cd ./Magic-8-ball-activity
+$ cd ./High-Low-activity
 $ yarn install
 ```
 
@@ -49,24 +52,24 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      answer: null
+      secretNumber: null
     }
   }
 
   getAnswer = () => {
-    //This is where you will write your Magic 8 Ball code
-    return "The Magic 8 ball answer"
+    //This is where you will write your High Low code
+    return "The Secret Number"
   }
 
   handleSubmit = () =>{
-    const answer = this.getAnswer()
-    this.setState({answer: answer})
+    const secretNumber = this.getAnswer()
+    this.setState({secretNumber : secretNumber})
   }
 
   render(){
     return (
       <div>
-        <h1>Magic 8 Ball</h1>
+        <h1>High Low Guessing Game</h1>
         <input
           type='text'
         />
@@ -74,11 +77,11 @@ class App extends React.Component {
         <button
           onClick={this.handleSubmit}
         >
-          Ask the Magic 8 Ball
+          Guess!
         </button>
 
-        {this.state.answer &&
-          <h2> The Magic 8 Ball says: {this.state.answer} </h2>
+        {this.state.secretNumber &&
+          <h2> The Secret Number is: {this.state.secretNumber} </h2>
         }
       </div>
     )

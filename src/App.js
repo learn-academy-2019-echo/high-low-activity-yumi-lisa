@@ -5,24 +5,24 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      answer: null
+      secretNumber: null
     }
   }
 
   getAnswer = () => {
-    //This is where you will write your Magic 8 Ball code
-    return "The Magic 8 ball answer"
+    //This is where you will write your High Low code
+    return "The Secret Number"
   }
 
   handleSubmit = () =>{
-    const answer = this.getAnswer()
-    this.setState({answer: answer})
+    const secretNumber = this.getAnswer()
+    this.setState({secretNumber : secretNumber})
   }
 
   render(){
     return (
       <div>
-        <h1>Magic 8 Ball</h1>
+        <h1>High Low Guessing Game</h1>
         <input
           type='text'
         />
@@ -30,11 +30,11 @@ class App extends React.Component {
         <button
           onClick={this.handleSubmit}
         >
-          Ask the Magic 8 Ball
+          Guess!
         </button>
 
-        {this.state.answer &&
-          <h2> The Magic 8 Ball says: {this.state.answer} </h2>
+        {this.state.secretNumber &&
+          <h2> The Secret Number is: {this.state.secretNumber} </h2>
         }
       </div>
     )
