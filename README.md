@@ -39,7 +39,7 @@ $ yarn start
 
 Now you're ready to code!
 
-Here's what that file looks like to start:
+Here's what the file ```/src/App.js``` looks like to start:
 
 ```javascript
 import React from 'react';
